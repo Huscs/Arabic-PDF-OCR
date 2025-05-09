@@ -1,27 +1,28 @@
 ```markdown
 # PDF Arabic OCR to Text/Markdown/HTML
 
+Extract Arabic text from scanned PDFs as clean TXT, Markdown, or HTML 
+
 Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — ready for search, LLM/NLP, or beautiful reading in Markdown/HTML!
 
 ## Features
 
-- **Robust OCR**: Uses Tesseract to extract Arabic from any scanned PDF.
-- **Automatic shaping and BiDi handling**: Ensures Arabic text displays correctly in all formats.
-- **Multiple Outputs**:
+- Robust OCR: Uses Tesseract to extract Arabic from any scanned PDF.
+- Automatic shaping and BiDi handling: Ensures Arabic text displays correctly in all formats.
+- Multiple Outputs:
   - `*_processing.txt`: Raw, clean Arabic text (for LLMs or further processing)
   - `*_reading.txt`: Same as above (for easy reading)
   - `.md`: Ready-to-use Markdown, with preserved formatting and RTL display
   - `.html`: Styled HTML, beautiful in browsers and ready for sharing
-- **No more broken, reversed, or disconnected Arabic** in your outputs!
-- **Optimized for macOS** (works on Linux/Windows with compatible dependencies)
+- Optimized for macOS (works on Linux/Windows with compatible dependencies)
+- No more broken, reversed, or disconnected Arabic** in your outputs!
 
 ---
 
-
 ## Install
 
-1. **Python 3.8+** (recommended: Python 3.10+)
-2. **Tesseract** with Arabic language pack:
+1. Python 3.8+ (recommended: Python 3.10+)
+2. Tesseract with Arabic language pack:
    ```sh
    brew install tesseract
    brew install tesseract-lang
@@ -30,6 +31,7 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
    ```sh
    sudo apt install tesseract-ocr tesseract-ocr-ara
    ```
+   Or for Windows: [See pdf2image Poppler notes](https://github.com/Belval/pdf2image#installing-poppler-on-windows) and [Tesseract Windows](https://github.com/tesseract-ocr/tesseract).
 3. **Python dependencies**:
    ```sh
    pip install pytesseract pdf2image arabic_reshaper python-bidi
@@ -49,7 +51,9 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
    ```
    - Add `--debug` to see raw OCR output for troubleshooting.
 
-3. **Output files**:
+> All output files will appear in the same directory as your PDF.
+
+3. Output files:
    - `book_processing.txt` : Clean text for processing/LLMs
    - `book_reading.txt`    : Clean text for reading
    - `book.md`             : Markdown (with proper RTL block)
@@ -59,7 +63,7 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
 
 ## Output Examples
 
-**HTML/Markdown preview:**
+HTML/Markdown preview:
 
 ```html
 <div dir="rtl" style="font-family:'Amiri','Noto Naskh Arabic','Arial',sans-serif;font-size:1.1em;line-height:2;white-space:pre-wrap">
@@ -68,7 +72,7 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
 </div>
 ```
 
-**TXT preview:**
+TXT preview:
 ```
 هذا نص عربي مستخرج من PDF!
 مع الحفاظ على الاتجاه والتشكيل والسطر.
@@ -88,20 +92,23 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
 
 ## Customization
 
-- **Tesseract config**: You can adjust `psm` mode or DPI in `extract_arabic_text_from_pdf_via_ocr`.
-- **Styling**: Edit the HTML/Markdown CSS for your own look.
-- **Multi-language**: Add more Tesseract languages as needed.
+- Tesseract config You can adjust `psm` mode or DPI in `extract_arabic_text_from_pdf_via_ocr`.
+- Styling: Edit the HTML/Markdown CSS for your own look.
+- Multi-language: Add more Tesseract languages as needed.
+- Minimum line length: Change the `min_line_length` argument to filter out noise.
 
 ---
 
 ## Troubleshooting
 
-- **Disconnected/broken Arabic in HTML/MD?**  
+- Disconnected/broken Arabic in HTML/MD?
   Make sure you’re using the *raw* OCR output, not reshaped or BiDi-processed.
-- **Tesseract not found?**  
+- Tesseract not found? 
   Ensure it’s installed and accessible in your system PATH.
-- **PDF2Image errors?**  
+- PDF2Image errors? 
   Check that `poppler` is installed.
+- TXT looks reversed or jumbled?  
+  Open with a modern code editor (VS Code, Sublime, etc) and ensure you are using the `_reading.txt` or `_processing.txt` file.
 
 ---
 
@@ -125,9 +132,8 @@ MIT License
 Pull requests and issues are welcome!
 
 ---
-```
+
 ## Author
 
 - [Hussam](https://github.com/Huscs)
-
 ```
