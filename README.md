@@ -15,7 +15,7 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
   - `.md`: Ready-to-use Markdown, with preserved formatting and RTL display
   - `.html`: Styled HTML, beautiful in browsers and ready for sharing
 - Optimized for macOS (works on Linux/Windows with compatible dependencies)
-- No more broken, reversed, or disconnected Arabic** in your outputs!
+- No more broken, reversed, or disconnected Arabic in your outputs!
 
 ---
 
