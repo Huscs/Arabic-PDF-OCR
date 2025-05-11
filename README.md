@@ -23,20 +23,20 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
 
 1. Python 3.8+ (recommended: Python 3.10+)
 2. Tesseract with Arabic language pack:
-   ```sh
+   ```
    brew install tesseract
    brew install tesseract-lang
    ```
    Or for Ubuntu:
-   ```sh
+   ```
    sudo apt install tesseract-ocr tesseract-ocr-ara
    ```
    Or for Windows: [See pdf2image Poppler notes](https://github.com/Belval/pdf2image#installing-poppler-on-windows) and [Tesseract Windows](https://github.com/tesseract-ocr/tesseract).
-3. **Python dependencies**:
-   ```sh
+3. Python dependencies:
+   ```
    pip install pytesseract pdf2image arabic_reshaper python-bidi
    ```
-4. **Poppler** (for `pdf2image` PDF conversion):
+4. Poppler (for `pdf2image` PDF conversion):
    - macOS: `brew install poppler`
    - Ubuntu: `sudo apt install poppler-utils`
 
@@ -46,7 +46,7 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
 
 1. Place your PDF (e.g. `book.pdf`) in the project folder.
 2. Run the script:
-   ```sh
+   ```
    python3 app.py book.pdf
    ```
    - Add `--debug` to see raw OCR output for troubleshooting.
@@ -65,7 +65,7 @@ Extract clean, line-preserved, right-to-left Arabic text from scanned PDFs — r
 
 HTML/Markdown preview:
 
-```html
+```
 <div dir="rtl" style="font-family:'Amiri','Noto Naskh Arabic','Arial',sans-serif;font-size:1.1em;line-height:2;white-space:pre-wrap">
 هذا نص عربي مستخرج من PDF!
 مع الحفاظ على الاتجاه والتشكيل والسطر.
